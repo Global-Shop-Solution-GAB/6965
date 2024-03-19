@@ -1,0 +1,1065 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.frmSalesRecap..Create(BaseForm)
+Gui.frmSalesRecap..Caption("Sales Recap")
+Gui.frmSalesRecap..Size(462,210)
+Gui.frmSalesRecap..MinX(0)
+Gui.frmSalesRecap..MinY(0)
+Gui.frmSalesRecap..Position(0,0)
+Gui.frmSalesRecap..AlwaysOnTop(False)
+Gui.frmSalesRecap..FontName("Tahoma")
+Gui.frmSalesRecap..FontSize(8.25)
+Gui.frmSalesRecap..ControlBox(True)
+Gui.frmSalesRecap..MaxButton(False)
+Gui.frmSalesRecap..MinButton(False)
+Gui.frmSalesRecap..MousePointer(0)
+Gui.frmSalesRecap..Moveable(True)
+Gui.frmSalesRecap..Sizeable(True)
+Gui.frmSalesRecap..ShowInTaskBar(True)
+Gui.frmSalesRecap..TitleBar(True)
+Gui.frmSalesRecap..Event(UnLoad,frmSalesRecap_UnLoad)
+Gui.frmSalesRecap.cmdRefresh.Create(Button)
+Gui.frmSalesRecap.cmdRefresh.Enabled(True)
+Gui.frmSalesRecap.cmdRefresh.Visible(True)
+Gui.frmSalesRecap.cmdRefresh.Zorder(0)
+Gui.frmSalesRecap.cmdRefresh.Size(97,23)
+Gui.frmSalesRecap.cmdRefresh.Position(11,140)
+Gui.frmSalesRecap.cmdRefresh.Caption("Refresh & Print")
+Gui.frmSalesRecap.cmdRefresh.FontName("Tahoma")
+Gui.frmSalesRecap.cmdRefresh.FontSize(8.25)
+Gui.frmSalesRecap.cmdRefresh.Event(Click,cmdRefresh_Click)
+Gui.frmSalesRecap.cmdPrint.Create(Button)
+Gui.frmSalesRecap.cmdPrint.Enabled(True)
+Gui.frmSalesRecap.cmdPrint.Visible(True)
+Gui.frmSalesRecap.cmdPrint.Zorder(0)
+Gui.frmSalesRecap.cmdPrint.Size(97,23)
+Gui.frmSalesRecap.cmdPrint.Position(119,140)
+Gui.frmSalesRecap.cmdPrint.Caption("Print")
+Gui.frmSalesRecap.cmdPrint.FontName("Tahoma")
+Gui.frmSalesRecap.cmdPrint.FontSize(8.25)
+Gui.frmSalesRecap.cmdPrint.Event(Click,cmdPrint_Click)
+Gui.frmSalesRecap.lbl1.Create(Label,"Date from :",False,55,13,0,13,24,True,0,"Tahoma",8.25,,0,0)
+Gui.frmSalesRecap.lbl1.BorderStyle(0)
+Gui.frmSalesRecap.dtp1.Create(DatePicker)
+Gui.frmSalesRecap.dtp1.Enabled(True)
+Gui.frmSalesRecap.dtp1.Visible(False)
+Gui.frmSalesRecap.dtp1.Zorder(0)
+Gui.frmSalesRecap.dtp1.Size(83,20)
+Gui.frmSalesRecap.dtp1.Position(87,22)
+Gui.frmSalesRecap.dtp1.CheckBox(False)
+Gui.frmSalesRecap.dtp1.FontName("Tahoma")
+Gui.frmSalesRecap.dtp1.FontSize(8.25)
+Gui.frmSalesRecap.lbl2.Create(Label,"to",False,10,13,0,185,27,True,0,"Tahoma",8.25,,0,0)
+Gui.frmSalesRecap.lbl2.BorderStyle(0)
+Gui.frmSalesRecap.dtp2.Create(DatePicker)
+Gui.frmSalesRecap.dtp2.Enabled(True)
+Gui.frmSalesRecap.dtp2.Visible(False)
+Gui.frmSalesRecap.dtp2.Zorder(0)
+Gui.frmSalesRecap.dtp2.Size(86,20)
+Gui.frmSalesRecap.dtp2.Position(206,23)
+Gui.frmSalesRecap.dtp2.CheckBox(False)
+Gui.frmSalesRecap.dtp2.FontName("Tahoma")
+Gui.frmSalesRecap.dtp2.FontSize(8.25)
+Gui.frmSalesRecap.lbl3.Create(Label,"Report Type :",True,67,13,0,15,63,True,0,"Tahoma",8.25,,0,0)
+Gui.frmSalesRecap.lbl3.BorderStyle(0)
+Gui.frmSalesRecap.ddlRptType.Create(DropDownList)
+Gui.frmSalesRecap.ddlRptType.Enabled(True)
+Gui.frmSalesRecap.ddlRptType.Visible(True)
+Gui.frmSalesRecap.ddlRptType.Zorder(0)
+Gui.frmSalesRecap.ddlRptType.Size(205,20)
+Gui.frmSalesRecap.ddlRptType.Position(87,59)
+Gui.frmSalesRecap.ddlRptType.FontName("Tahoma")
+Gui.frmSalesRecap.ddlRptType.FontSize(8.25)
+Gui.frmSalesRecap.lbl4.Create(Label,"Sales Type :",True,59,13,0,15,98,True,0,"Tahoma",8.25,,0,0)
+Gui.frmSalesRecap.lbl4.BorderStyle(0)
+Gui.frmSalesRecap.ddlSalType.Create(DropDownList)
+Gui.frmSalesRecap.ddlSalType.Enabled(True)
+Gui.frmSalesRecap.ddlSalType.Visible(True)
+Gui.frmSalesRecap.ddlSalType.Zorder(0)
+Gui.frmSalesRecap.ddlSalType.Size(204,20)
+Gui.frmSalesRecap.ddlSalType.Position(89,95)
+Gui.frmSalesRecap.ddlSalType.FontName("Tahoma")
+Gui.frmSalesRecap.ddlSalType.FontSize(8.25)
+Gui.frmSalesRecap.lbl5.Create(Label,"Loading please wait .....",False,117,13,0,231,145,True,0,"Tahoma",8.25,,0,0)
+Gui.frmSalesRecap.lbl5.BorderStyle(0)
+Gui.frmSalesRecap.lbl5.ForeColor(255)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+Program.Sub.Main.Start
+Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+
+	v.local.sCOCode.Declare
+	v.Local.iCount.Declare
+	v.Global.iCurEnd.Declare(long,29)
+	v.Global.iPd2End.Declare(long,59)
+	v.Global.iOverStart.Declare(long,90)
+	
+v.local.sFilname.Declare
+v.local.bRet.Declare
+v.Local.ssql.Declare
+
+
+gui.frmSalesRecap.ddlRptType.AddItem("Summary")
+gui.frmSalesRecap.ddlRptType.AddItem("Detail")
+
+gui.frmSalesRecap.ddlRptType.ListIndex(0)
+
+gui.frmSalesRecap.ddlSalType.AddItem("Plant to Plant Sales") 'P
+gui.frmSalesRecap.ddlSalType.AddItem("Inside Sales") ' I
+gui.frmSalesRecap.ddlSalType.AddItem("Outside Sales") ' O
+gui.frmSalesRecap.ddlSalType.ListIndex(0)
+
+gui.frmSalesRecap..Show
+
+f.Intrinsic.Control.ExitSub
+	
+'	F.ODBC.Connection!CONCOM.OpenConnection("GLOBAL_COMMON",V.Ambient.PUser,V.Ambient.PPass,7200)
+'	Function.Intrinsic.Debug.InvokeDebugger
+'	Function.Intrinsic.Debug.Stop
+	
+'	Variable.Passed.BIP_Terminal
+	'Variable.Passed.009001  000567 570
+'f.Intrinsic.Control.If(v.Caller.Hook,=,16090)
+'	f.Intrinsic.Control.If(Variable.Passed.BIP_REPORTID,<>,000567,"or",Variable.Passed.BIP_REPORTID,<>,000570)
+'	f.Intrinsic.Control.If(Variable.Passed.BIP_RPTID,<>,000567)
+'	f.Intrinsic.Control.andIf(Variable.Passed.BIP_RPTID,<>,000570)
+'		f.Intrinsic.Control.end
+'	f.Intrinsic.Control.EndIf
+'f.Intrinsic.Control.EndIf
+
+'567 567 AR_Aging_DtlCustNo
+'570 570 AR_Aging_SumCustNo
+
+'568 568 AR_Aging_DtlCustNm
+'571 571 AR_Aging_SumCustNm
+'V.Passed.Cancel.Set(-1)
+
+'	f.Intrinsic.String.Build("{0}\GSS6893.tmp",V.Caller.LocalGSSTempDir,v.local.sFilname)
+'	Function.Intrinsic.File.Exists(V.local.sFilname,v.local.bRet)
+'	f.Intrinsic.Control.If(v.local.bRet,=,True)
+'		f.Intrinsic.Control.end
+'	f.Intrinsic.Control.EndIf
+'	F.Intrinsic.File.String2File(V.local.sFilname,"LOCK")
+'Function.Intrinsic.Debug.InvokeDebugger
+'Function.Intrinsic.Debug.Stop
+
+	f.Intrinsic.Control.If(v.Caller.Switches,=,"S")
+
+		F.Intrinsic.UI.InvokeWaitDialog("Loading...","Please Wait93...")
+			
+		F.ODBC.Connection!CONCOM.OpenCommonConnection(7200)
+		F.Data.DataTable.CreateFromSQL("dCO","CONCOM","select cocode from COMPANIES")
+		f.Intrinsic.Control.For(v.Local.iCount,0,v.DataTable.dCO.RowCount--,1)
+			f.Intrinsic.String.Build("GLOBAL_{0}",v.DataTable.dCO(v.Local.iCount).cocode!fieldVal,v.local.sCOCode)
+'			f.Intrinsic.UI.Msgbox(v.local.sCOCode)
+			
+	'		f.Intrinsi..if(v.local.sCOCode.trim,<>,"GLOBAL_A15")
+				f.ODBC.Connection!Con.OpenConnection(v.local.sCOCode,v.Ambient.PUser,v.Ambient.PPass)
+	'			f.Intrinsic.Control.if(v.local.sCOCode.trim,<>,"GLOBAL_TST")
+	'				f.Global.General.overridecompany(v.DataTable.dCO(v.Local.iCount).cocode!fieldVal)
+	'				F.ODBC.Connection!Con.OpenCompanyConnection(300)
+					f.Intrinsic.Control.CallSub(PopulateData)
+	'			f.Intrinsic.Control.endif
+	'		f.Intrinsic.Control.endif 
+		f.Intrinsic.Control.Next(v.Local.iCount)	
+		Function.Intrinsic.Debug.InvokeDebugger
+		
+		Function.Intrinsic.Debug.Stop
+			'============
+			
+			V.Local.fAMT_INVOICE.Declare
+			V.Local.fcurrent1.Declare
+			V.Local.fTPD2.Declare
+			V.Local.fTPD3.Declare
+			V.Local.fover.Declare
+			V.Local.fNotAged.Declare
+			
+		F.Data.DataTable.Compute("dtAgingFinal","SUM(AMT_INVOICE)","",V.Local.fAMT_INVOICE)
+		F.Data.DataTable.Compute("dtAgingFinal","SUM(current1)","",V.Local.fcurrent1)
+		F.Data.DataTable.Compute("dtAgingFinal","SUM(TPD2)","",V.Local.fTPD2)
+		F.Data.DataTable.Compute("dtAgingFinal","SUM(TPD3)","",V.Local.fTPD3)
+		F.Data.DataTable.Compute("dtAgingFinal","SUM(over)","",V.Local.fover)
+		F.Data.DataTable.Compute("dtAgingFinal","SUM(Not_Aged)","",V.Local.fNotAged)
+		
+'		Function.Data.DataTable.AddRowByMap("dtAgingFinal","CUSTOMER*!*NAME_CUSTOMER*!*SALESPERSON*!*GL_Account*!*Batch_Num*!*Batch_Line*!*BRANCH*!*INVOICE*!*DATE_INVOICE*!*DATE_TRANSACTION*!*DUE_DATE*!*BATCH_CODE*!*TYPE*!*REFERENCE*!*AMT_INVOICE*!*CURRENT1*!*TPD2*!*TPD3*!*OVER*!*NOT_AGED*!*terms
+'		*!*TELEPHONE*!*Country*!*attention*!*REC_TYPE*!*Trml*!*Rptid",v.Local.scust,v.Local.sNAME_CUSTOMER,v.Local.sSALESPERSON,v.Local.sGL_Account,v.Local.sBatch_Num,v.Local.sBatch_Line,v.Local.sBRANCH,v.Local.sINVOICE,
+'		V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).DATE_INVOICE!Fieldval,V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).DATE_TRANSACTION!Fieldval,
+'		V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).DUE_DATE!Fieldval,v.Local.sBATCH_CODE,v.Local.sTYPE,v.Local.sREFERENCE,V.Local.fAMT_INVOICE,V.Local.fcurrent1,
+'		V.Local.fTPD2,V.Local.fTPD3,V.Local.fover,V.Local.fNotAged,v.Local.sterms,v.Local.sTELEPHONE.left17,v.Local.sCountry,v.Local.sattention,"GT",v.Local.sTrml,v.Local.sRptid)
+		
+		f.Data.DataTable.SetValueFormat("dtAgingFinal",-1,"DATE_INVOICE","DATE_INVOICE_S","YYYYMMDD")
+		f.Data.DataTable.SetValueFormat("dtAgingFinal",-1,"DUE_DATE","DUE_DATE_S","YYYYMMDD")
+		f.Data.DataTable.SetValueFormat("dtAgingFinal",-1,"DATE_TRANSACTION","DATE_TRANSACTION_S","YYYYMMDD")
+		f.Data.DataTable.SetValueFormat("dtAgingFinal",-1,"AGE_DATE","AGE_DATE_S","YYYYMMDD")
+		
+		F.Data.DataTable.SetSeries("dtAgingFinal","SEQUENCE",1,1)
+		f.Data.DataTable.SetValueFormat("dtAgingFinal",-1,"SEQUENCE","SEQUENCE","000000000")
+
+		F.ODBC.Connection!Con.OpenCompanyConnection(300)
+		f.Intrinsic.String.Build("Delete from BI_AR_AGING where TRMNL ='{0}' ",v.Caller.Terminal.Trim,v.Local.ssql)
+		f.ODBC.Connection!Con.Execute(v.Local.ssql)
+		
+		'
+		F.Data.DataTable.SaveToDB("dtAgingFinal","con","BI_AR_AGING_6965","Trml*!*Rptid*!*SEQUENCE*!*CUSTOMER",256,"SEQUENCE@!@SEQUENCE*!*CUSTOMER@!@CUST_NO*!*NAME_CUSTOMER@!@CUST_NAME*!*Trml@!@TRMNL*!*Rptid@!@RPTID*!*SALESPERSON@!@SLSMN*!*GL_Account@!@GL_ACCT*!*Batch_Num@!@BATCH_NUM*!*Batch_Line@!@BTCH_LINE*!*BRANCH@!@BRANCH*!*INVOICE@!@INVOICE*!*DATE_INVOICE_S@!@INV_DATE*!*DUE_DATE_S@!@DUE_DATE*!*BATCH_CODE@!@CODE*!*TYPE@!@TRANSTYP*!*REFERENCE@!@REF*!*AMT_INVOICE@!@AMT*!*CURRENT1@!@CURR*!*TPD2@!@D_30*!*TPD3@!@D_60*!*OVER@!@D_90*!*NOT_AGED@!@DATING*!*terms@!@TERMS*!*TELEPHONE@!@TELEPHONE*!*attention@!@ATTN*!*REC_TYPE@!@REC_TYPE*!*CRRNCY@!@CRRNCY*!*AGE_DATE_S@!@AGE_DATE")
+		'===========
+		f.ODBC.Connection!Con.Close
+	
+	f.Intrinsic.Control.else
+	Function.Intrinsic.Debug.InvokeDebugger
+	Function.Intrinsic.Debug.Stop
+	
+		f.Intrinsic.Control.If(Variable.Passed.BIP_RPTID,<>,000568)
+		f.Intrinsic.Control.andIf(Variable.Passed.BIP_RPTID,<>,000571)
+			f.Intrinsic.Control.end
+		f.Intrinsic.Control.EndIf
+	
+		F.ODBC.Connection!Con.OpenCompanyConnection(300)
+		f.ODBC.Connection!Con.Execute("delete from BI_AR_AGING")
+'		f.ODBC.Connection!Con.Execute("insert into BI_AR_AGING select TRMNL,RPTID,CUST_NO,SEQUENCE,REC_TYPE,CRRNCY,CUST_NAME,FROM_CRRNCY,TO_CRRNCY,AGE_DATE,INVOICE,CODE,BATCH_NUM,BTCH_LINE,COUNTRY,TELEPHONE,FAX,ATTN,TERMS,INV_DATE,DUE_DATE,DISC_DATE,TRANSTYP,TRANS_DATE,REF,BRANCH,LIMIT,RATE,FILL1,AMT,FILL2,CURR,FILL3,D_30,FILL4,D_60,FILL5,D_90,FILL6,DATING,FILL7,TOTAL,VEND,SLSMN,FILL8,BAL,GL_ACCT,FILLER45 from GLOBALA15.BI_AR_AGING_6965")
+		
+		f.Intrinsic.String.Build("insert into BI_AR_AGING select {0},RPTID,CUST_NO,SEQUENCE,REC_TYPE,CRRNCY,CUST_NAME,FROM_CRRNCY,TO_CRRNCY,AGE_DATE,INVOICE,CODE,BATCH_NUM,BTCH_LINE,COUNTRY,TELEPHONE,FAX,ATTN,TERMS,INV_DATE,DUE_DATE,DISC_DATE,TRANSTYP,TRANS_DATE,REF,BRANCH,{1}LIMIT{1},RATE,FILL1,AMT,FILL2,CURR,FILL3,D_30,FILL4,D_60,FILL5,D_90,FILL6,DATING,FILL7,TOTAL,VEND,SLSMN,FILL8,BAL,GL_ACCT,FILLER45 from GLOBALA15.BI_AR_AGING_6965",v.Caller.Terminal.trim,v.Ambient.DblQuote,v.Local.ssql)
+		
+'		f.Intrinsic.String.Build("update BI_AR_AGING set TRMNL = '{0}' ",v.Caller.Terminal.trim,v.Local.ssql)
+		f.ODBC.Connection!Con.Execute(v.Local.ssql)
+		f.ODBC.Connection!Con.Close
+		f.Intrinsic.Control.end
+	f.Intrinsic.Control.EndIf
+		
+	F.Data.DataTable.Close("dCO")
+	
+	f.ODBC.Connection!CONCOM.Close
+	F.Intrinsic.UI.CloseWaitDialog
+	f.Intrinsic.UI.Msgbox("Completed")
+	
+
+'Function.Intrinsic.File.Exists(V.local.sFilname,v.local.bRet)
+'f.Intrinsic.Control.If(v.local.bRet,=,True)
+'	Function.Intrinsic.File.DeleteFile(V.local.sFilname)
+'f.Intrinsic.Control.EndIf
+'f.Intrinsic.Control.end	
+	
+	f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.ErrorMsg.Start
+v.Local.sError.Declare
+'v.local.sFilname.Declare
+'v.local.bRet.Declare
+
+''Generic Error message.
+
+'f.Intrinsic.String.Build("{0}\GSS6893.tmp",V.Caller.LocalGSSTempDir,v.local.sFilname) 
+'Function.Intrinsic.File.Exists(V.local.sFilname,v.local.bRet)
+'f.Intrinsic.Control.If(v.local.bRet,=,True)
+'	Function.Intrinsic.File.DeleteFile(V.local.sFilname)
+'f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.String.Build("Project GCG_6965.g2u {0}{0}Subroutine: {1}{0}Error: {2} with Description: {3}", v.Ambient.NewLine, v.Args.CurrentSub, v.Ambient.ErrorNumber, v.Ambient.ErrorDescription, v.Local.sError)
+f.Intrinsic.UI.Msgbox(v.Local.sError)
+f.Intrinsic.Control.end
+Program.Sub.ErrorMsg.End
+
+Program.Sub.LoadAging.Start
+f.Intrinsic.Control.Try
+
+'	F.Intrinsic.Control.If(V.Screen.FrmAging!optAgeDueDate.Value)
+'		F.Intrinsic.Control.CallSub(ARAgingByDueDate)
+'	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.CallSub(ARAgingByInvoice)
+'	F.Intrinsic.Control.EndIf
+
+	f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.LoadAging.End
+
+Program.Sub.ARAgingByInvoice.Start
+f.Intrinsic.Control.Try
+
+	V.Local.iCnt.Declare
+	V.Local.fMons.Declare
+	V.Local.dDateInit.Declare
+	V.Local.dDatePres.Declare
+	V.Local.iDeter.Declare
+	V.Local.sType.Declare
+	V.Local.bAgeCash.Declare
+	V.Local.bAgeCash2.Declare
+	V.Local.bAgeCash3.Declare
+	V.Local.iCurEnd.Declare
+	V.Local.iPd2End.Declare
+	V.Local.iOverStart.Declare
+	V.Local.todaysDate.Declare(Date)
+	
+'	V.Local.todaysDate.Set(V.Screen.FrmAging!dtpAgeDate.Value)
+	
+	V.Local.todaysDate.Set(v.Ambient.Date)
+	
+	V.Local.dCurEnd.Declare(Date)
+	V.Local.dPd2End.Declare(Date)
+	V.Local.dOverStart.Declare(Date)
+	
+
+	
+	F.Intrinsic.Math.Mult(V.Global.iCurEnd, -1, V.Local.iCurEnd)
+	F.Intrinsic.Math.Mult(V.Global.iPd2End, -1, V.Local.iPd2End)
+	F.Intrinsic.Math.Mult(V.Global.iOverStart, -1, V.Local.iOverStart)
+	
+	
+	F.Intrinsic.Date.DateAdd("D", V.Local.iCurEnd, V.Local.todaysDate, V.Local.dCurEnd)
+	F.Intrinsic.Date.DateAdd("D", V.Local.iPd2End, V.Local.todaysDate, V.Local.dPd2End)
+	F.Intrinsic.Date.DateAdd("D", V.Local.iOverStart, V.Local.todaysDate, V.Local.dOverStart)
+	
+	'30
+	F.Data.DataTable.AddColumn("dtAging", "CurEnd","Date", V.Local.dCurEnd)
+	'60
+    F.Data.DataTable.AddColumn("dtAging", "Pd2End","Date", V.Local.dPd2End)
+    '90
+	F.Data.DataTable.AddColumn("dtAging", "OverStart","Date", V.Local.dOverStart)
+		
+	F.Data.DataTable.AddExpressionColumn("dtAging", "COL1Temp", "String", "IIF(DATE_INVOICE >= CurEnd, 1,IIF(DATE_INVOICE < CurEnd And DATE_INVOICE >= Pd2End, 2, IIF(DATE_INVOICE < Pd2End And DATE_INVOICE >= OverStart, 3, IIF(DATE_INVOICE < OverStart, 4,  0) ) ))")
+	F.Data.DataTable.AddExpressionColumn("dtAging", "Else5", "String", "IIF((TYPE = 'Cash' OR TYPE = 'FIN_CHG' OR TYPE = 'Exchange Variance' OR TYPE = 'DISCNT') AND (AGE_CASH = 1 OR AGE_CASH2 = 1), 0, IIF((TYPE = 'Invoice' OR TYPE = 'Adjust' OR TYPE = 'Credit'), 0, 5))")		
+	F.Data.DataTable.AddExpressionColumn("dtAging", "COL1", "String","IIF(Else5 = 5, 5, COL1Temp)")			
+	F.Data.DataTable.CopyColumn("dtAging","COL1","COLUMN1")
+	
+	'set the $ to the right columns	
+	F.Data.DataTable.AddExpressionColumn("dtAging", "CURRENT1Temp", "Float","IIF(COL1 = 1, AMT_INVOICE, 0)")
+	F.Data.DataTable.CopyColumn("dtAging","CURRENT1Temp","CURRENT1")	
+	F.Data.DataTable.AddExpressionColumn("dtAging", "TPD2Temp", "Float","IIF(COL1 = 2, AMT_INVOICE, 0)")
+	F.Data.DataTable.CopyColumn("dtAging","TPD2Temp","TPD2")	
+	F.Data.DataTable.AddExpressionColumn("dtAging", "TPD3Temp", "Float","IIF(COL1 = 3, AMT_INVOICE, 0)")
+	F.Data.DataTable.CopyColumn("dtAging","TPD3Temp","TPD3")	
+	F.Data.DataTable.AddExpressionColumn("dtAging", "OVERTemp", "Float","IIF(COL1 = 4, AMT_INVOICE, 0)")
+	F.Data.DataTable.CopyColumn("dtAging","OVERTemp","OVER")	
+	F.Data.DataTable.AddExpressionColumn("dtAging", "NOT_AGEDTemp", "Float","IIF(COL1 = 5, AMT_INVOICE, 0)")
+	F.Data.DataTable.CopyColumn("dtAging","NOT_AGEDTemp","NOT_AGED")		
+	F.Data.DataTable.AddExpressionColumn("dtAging", "PAYTemp", "String", "IIF(Else5 = 5,'','Cash Receipt')")		
+	F.Data.DataTable.CopyColumn("dtAging","PAYTemp","PAY")
+
+
+	f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.ARAgingByInvoice.End
+
+Program.Sub.ARAgingByDueDate.Start
+f.Intrinsic.Control.Try
+
+V.Local.iCnt.Declare
+	V.Local.fMons.Declare
+	V.Local.dDateInit.Declare
+	V.Local.dDatePres.Declare
+	V.Local.sInvoice.Declare
+	V.Local.iDeter.Declare
+	V.Local.sType.Declare
+	V.Local.sDateValue.Declare
+	V.Local.sReturn.Declare
+	V.Local.srowIndex.Declare
+	V.Local.bAgeCash.Declare
+	V.Local.bAgeCash2.Declare
+	V.Local.bAgeCash3.Declare
+	V.Local.bReturn.Declare
+	V.Local.sArray.Declare
+	V.Local.sArrayReturn.Declare
+	V.Local.ThirtyDate.Declare(Date)
+	V.Local.SixtyDate.Declare(Date)
+	V.Local.NinetyDate.Declare(Date)
+	
+	
+'	V.local.dDatePres.Set(V.Screen.FrmAging!dtpAgeDate.Value)	
+	V.Local.dDatePres.Set(v.Ambient.Date)
+	
+	F.Intrinsic.Date.DateAdd("D", -30, V.local.dDatePres, V.Local.ThirtyDate)
+	F.Intrinsic.Date.DateAdd("D", -60, V.local.dDatePres, V.Local.SixtyDate)
+	F.Intrinsic.Date.DateAdd("D", -90, V.local.dDatePres, V.Local.NinetyDate)
+	
+	F.Data.DataTable.AddColumn("dtAging", "DatePres", "Date", V.local.dDatePres)
+    F.Data.DataTable.AddColumn("dtAging", "ThirtyDate","Date", V.Local.ThirtyDate)
+	F.Data.DataTable.AddColumn("dtAging", "SixtyDate","Date", V.Local.SixtyDate)
+	F.Data.DataTable.AddColumn("dtAging", "NinetyDate","Date", V.Local.NinetyDate)
+
+	
+	F.Data.DataTable.AddExpressionColumn("dtAging", "COL1Temp", "String", "IIF(DUE_DATE> DatePres, 1,IIF(DUE_DATE  <= DatePres And DUE_DATE >= ThirtyDate, 2, IIF(DUE_DATE < ThirtyDate And DUE_DATE >= SixtyDate, 3, IIF(DUE_DATE  <= SixtyDate And DUE_DATE >= NinetyDate, 9, IIF(DUE_DATE < NinetyDate, 4,  0) )) ))")
+	
+	F.Data.DataTable.AddExpressionColumn("dtAging", "Else5", "String", "IIF((TYPE = 'Cash' OR TYPE = 'FIN_CHG' OR TYPE = 'Exchange Variance' OR TYPE = 'DISCNT') AND (AGE_CASH = 1 OR AGE_CASH2 = 1 OR AGE_CASH3 = 1), 0, IIF((TYPE = 'Invoice' OR TYPE = 'Adjust' OR TYPE = 'Credit'), 0, 5))")		
+	
+	F.Data.DataTable.AddExpressionColumn("dtAging", "COL1", "String","IIF(Else5 = 5, 5, COL1Temp)")	
+	'F.Data.DataTable.AddExpressionColumn("dtAging", "COL1", "String","IIF(COL1ColorCodes = 9, 3, COL1ColorCodes)")	
+	F.Data.DataTable.CopyColumn("dtAging","COL1","COLUMN1")
+
+	'set the $ to the right columns	
+	F.Data.DataTable.AddExpressionColumn("dtAging", "CURRENT1Temp", "Float","IIF(COLUMN1 = 1, AMT_INVOICE, 0)")
+	F.Data.DataTable.CopyColumn("dtAging","CURRENT1Temp","CURRENT1")		
+	F.Data.DataTable.AddExpressionColumn("dtAging", "TPD2Temp", "Float","IIF(COLUMN1 = 2, AMT_INVOICE, 0)")
+	F.Data.DataTable.CopyColumn("dtAging","TPD2Temp","TPD2")		
+	F.Data.DataTable.AddExpressionColumn("dtAging", "TPD3Temp", "Float","IIF(COLUMN1 = 3, AMT_INVOICE, 0)")
+	F.Data.DataTable.CopyColumn("dtAging","TPD3Temp","TPD3")	
+	F.Data.DataTable.AddExpressionColumn("dtAging", "OVERTemp", "Float","IIF(COLUMN1 = 9, AMT_INVOICE, 0)")
+	F.Data.DataTable.CopyColumn("dtAging","OVERTemp","OVER")		
+	F.Data.DataTable.AddExpressionColumn("dtAging", "OVER2Temp", "Float","IIF(COLUMN1 = 4, AMT_INVOICE, 0)")
+	F.Data.DataTable.CopyColumn("dtAging","OVER2Temp","OVER2")		
+	F.Data.DataTable.AddExpressionColumn("dtAging", "NOT_AGEDTemp", "Float","IIF(COLUMN1 = 5, AMT_INVOICE, 0)")
+	F.Data.DataTable.CopyColumn("dtAging","NOT_AGEDTemp","NOT_AGED")		
+	F.Data.DataTable.AddExpressionColumn("dtAging", "PAYTemp", "String", "IIF(Else5 = 5,'','Cash Receipt')")		
+	F.Data.DataTable.CopyColumn("dtAging","PAYTemp","PAY")
+	
+
+	f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.ARAgingByDueDate.End
+Program.Sub.PopulateData.Start
+	'Preproc for AR0010
+	
+	'NOTES:
+	'	COLUMN			DESCRIPTION														DATA TYPE		SIZE
+	'	==============|===============================================================|===============|==========|
+	'	TRMNL:			CURRENT USER'S TERMINAL NUMBER									CHAR			3
+	'	RPTID: 			000568															CHAR			6
+	'	CUST_NO: 		CUSTOMER NUMBER													CHAR			7
+	'	SEQUENCE:		INCREMENTING SEQUENCE NUMBER, 9 DIGITS LEFT-PADDED WITH ZEROS	CHAR			9
+	'	REC_TYPE:		L 	-	LINE													CHAR			2
+	'					C 	- 	SUBTOTAL FOR THE CURRENT CUSTOMER
+	'					GT	- 	GRAND TOTAL FOR ALL CUSTOMERS WITHIN THE REPORT
+	'	CRRNCY:			COMPANY CURRENCY												CHAR			3
+	'	CUST_NAME:		NAME OF CUSTOMER												CHAR			30
+	'	FROM_CRRNCY:	ORDER CURRENCY (IF MULTIPLE CURRENCIES USED)					CHAR			3
+	'	TO_CURRENCY:	COMPANY CURRENCY (IF MULTIPLE CURRENCIES USED)					CHAR			3
+	'	AGE_DATE:		TODAY'S DATE, YYYYMMDD											CHAR			8
+	'	INVOICE:		INVOICE NUMBER													CHAR			15
+	'	CODE:			AR BATCH CODE													CHAR			2
+	'	BATCH_NUM:		AR BATCH NUMBER													CHAR			5
+	'	BTCH_LINE:		AR BATCH LINE NUMBER											CHAR			5
+	'	COUNTRY:		COUNTRY CODE FROM ORDER											CHAR			3
+	'	TELEPHONE:		PHONE NUMBER FROM ORDER INFO									CHAR			17
+	'	FAX:			FAX NUMBER FROM ORDER INFO										CHAR			17
+	'	ATTN:			ATTN FROM ORDER INFO											CHAR			30
+	'	TERMS:			PAY TERMS FROM ORDER INFO										CHAR			10
+	'	INV_DATE:		DATE OF INVOICE, YYYYMMDD										CHAR			8
+	'	DUE_DATE:		INVOICE DUE DATE, YYYYMMDD										CHAR			8
+	'	DISC_DATE:		INVOICE DISCOUNT CUTOFF DATE, YYYYMMDD							CHAR			8
+	'	TRANSTYP:		TRANSACTION TYPE CORRESPONDING WITH AR BATCH CODE				CHAR			8
+	'					IF BATCH CODE=10 THEN 'INVOICE'
+	'					IF BATCH CODE=11 THEN 'CASH'
+	'					IF BATCH CODE=12 THEN 'CREDIT'
+	'					IF BATCH CODE=13 THEN 'ADJUST'
+	'					IF BATCH CODE=15 THEN 'FIN_CHG'
+	'					IF BATCH CODE=16 THEN 'DISCNT'
+	'					IF BATCH CODE=16 THEN 'DISCNT'
+	'					IF BATCH CODE=17 THEN 'XCHGVAR'
+	'					ELSE THEN 'PREPMT'
+	'	REF:			REFERENCE FROM ORDER INFO										CHAR			20
+	'	BRANCH:			BRANCH FROM ORDER INFO											CHAR			2
+	'	LIMIT:			CUSTOMER'S CREDIT LIMIT	FROM CUSTOMER MASTER					NUMERIC			9,2
+	'	RATE:			FINANCE CHARGE FROM CUSTOMER MASTER								NUMERIC			10,5
+	'	FILL1:			0																NUMERIC			1,0
+	'	AMT:			BATCH LINE AMOUNT												NUMERIC			15,2
+	'	FILL2:			0																NUMERIC			1,0
+	'	CURR:			CURRENCY EXCHANGE RATE AS OF CURRENT DATE						NUMERIC			10,5
+	'	FILL3:			0																NUMERIC			1,0
+	'	D_30:			AGING 30 DAYS AMOUNT											NUMERIC			15,2
+	'	FILL4:			0																NUMERIC			1,0
+	'	D_60:			AGING 60 DAYS AMOUNT											NUMERIC			15,2
+	'	FILL5:			0																NUMERIC			1,0
+	'	D_90:			AGING 90 DAYS AMOUNT											NUMERIC			15,2
+	'	FILL6:			0																NUMERIC			1,0
+	'	DATING			AGING TODAY AMOUNT												NUMERIC			15,2
+	'	FILL7:			0																NUMERIC			1,0
+	'	TOTAL:			TOTAL AGING AMOUNT												NUMERIC			15,2
+	'	VEND:			{BLANK}															CHAR			7
+	'	SLSMN:			SALESMAN FROM ORDER INFO										CHAR			3
+	'	FILL8:			0																NUMERIC			1,0
+	'	BAL:			0																NUMERIC			15,2
+	'	GL_ACCT:		AR RECEIVABLES GL ACCOUNT										CHAR			15
+	'	FILLER45:		{BLANK}															CHAR			25
+	
+	'LOGIC NOTES:
+	'	1. DELETE ALL RECORDS FROM BI_AR_AGING WHERE TRMNL= THE CURRENT USER'S TERMINAL NUMBER
+	'	2. USE SAME LOGIC AS Accounts Receivable > View > AR Aging Dashboard TO ACCUMULATE RECORDS.  JOIN AR_OPEN_ITEMS WITH ORDER_HIST_LINE TO GET AL FIELDS REQUIRED.
+	'	3. WRITE TO TABLE BI_AR_AGING  
+	
+	f.Intrinsic.Control.Try
+	
+	v.Local.ssql.Declare
+	V.Local.dAgingDate.Declare
+	V.Local.sFilter.Declare
+	
+	V.Local.fAMT_INVOICE.Declare
+	V.Local.fcurrent1.Declare
+	V.Local.fTPD2.Declare
+	V.Local.fTPD3.Declare
+	V.Local.fover.Declare
+	V.Local.fNotAged.Declare
+	v.Local.iCount.Declare
+	
+	v.Local.scust.declare
+	v.Local.sNAME_CUSTOMER.declare
+	v.Local.sSALESPERSON.declare
+	v.Local.sGL_Account.declare
+	v.Local.sBatch_Num.declare
+	v.Local.sBatch_Line.declare
+	v.Local.sBRANCH.declare
+	v.Local.sINVOICE.declare
+	v.Local.sDATE_INVOICE.declare
+	v.Local.sDATE_TRANSACTION.declare
+	v.Local.sDUE_DATE.declare
+	v.Local.sBATCH_CODE.declare
+	v.Local.sTYPE.declare
+	v.Local.sREFERENCE.declare
+	v.Local.sAMT_INVOICE.declare
+	v.Local.sCURRENT1.declare
+	v.Local.sTPD2.declare
+	v.Local.sTPD3.declare
+	v.Local.sOVER.declare
+	v.Local.sNOT_AGED.declare
+	v.Local.sterms.declare
+	v.Local.sTELEPHONE.declare
+	v.Local.sCountry.declare
+	v.Local.sattention.declare
+	v.Local.sREC_TYPE.declare
+	v.Local.sTrml.declare
+	v.Local.sRptid.declare
+	v.Local.sCustomer.Declare
+	
+	
+'	F.ODBC.Connection!con.OpenCompanyConnection(500)
+	
+'	f.Intrinsic.string.build("select Batch_Num,Batch_Code,Invoice,customer,Amt_Trans_Total,Date_Invoice,GL_Account,disc_date,due_date from v_Ar_Open_Items ","",v.Local.ssql)
+	
+
+	
+	
+	V.Local.dAgingDate.Set(v.Ambient.Date)
+'	V.Local.dAgingDate.Set(V.Screen.FrmAging!dtpAgeDate.Value)
+
+
+
+'	F.Intrinsic.String.Build("SELECT LTRIM(RTRIM(UPPER(A.customer))) As CUSTOMER,B.NAME_CUSTOMER,RTrim(C.NAME) as SALESPERSON,GL_Account,Batch_Num,Batch_Line,A.TERRITORY As BRANCH,LTRIM(RTRIM(UPPER(invoice))) As INVOICE,A.DATE_INVOICE,A.DATE_TRANSACTION,A.DUE_DATE,CASE BATCH_CODE WHEN '10' THEN 'Invoice' WHEN '11' THEN 'Cash' WHEN '12' THEN 'Credit Memo' WHEN '13' THEN 'Adjustment' WHEN '15' THEN 'Fin. Charge' WHEN '16' THEN 'Discount' END AS TYPE,IF(REFUND_CK_NO <> '', RTrim(A.REFUND_CK_NO),RTrim(A.REFERENCE)) As REFERENCE,AMT_INVOICE,CONVERT(0,SQL_FLOAT) AS CURRENT1,CONVERT(0,SQL_FLOAT) AS TPD2,CONVERT(0,SQL_FLOAT) AS TPD3,CONVERT(0,SQL_FLOAT) AS OVER,CONVERT(0,SQL_FLOAT) AS NOT_AGED,'' AS COLUMN1,'Adjust' AS ADJUST,'' AS PAY,LTRIM(RTRIM(UPPER(A.customer)))+LTRIM(RTRIM(UPPER(invoice))) As CUSTINV FROM V_AR_OPEN_ITEMS A LEFT JOIN V_CUSTOMER_MASTER B ON A.CUSTOMER = B.CUSTOMER LEFT JOIN V_SALESPERSONS C on A.SALESPERSON = C.ID WHERE A.DATE_TRANSACTION <= '{0}' ORDER BY A.CUSTOMER,A.DATE_INVOICE,A.DATE_TRANSACTION;",V.Local.dAgingDate.PervasiveDate,V.Local.sSQL)
+	
+'	F.Intrinsic.String.Build("SELECT LTRIM(RTRIM(UPPER(A.customer))) As CUSTOMER,B.NAME_CUSTOMER,RTrim(C.NAME) as SALESPERSON,GL_Account,Batch_Num,Batch_Line,A.TERRITORY As BRANCH,LTRIM(RTRIM(UPPER(invoice))) As INVOICE,A.DATE_INVOICE,A.DATE_TRANSACTION,A.DUE_DATE,BATCH_CODE,CASE BATCH_CODE WHEN '10' THEN 'Invoice' WHEN '11' THEN 'Cash' WHEN '12' THEN 'Credit Memo' WHEN '13' THEN 'Adjustment' WHEN '15' THEN 'Fin. Charge' WHEN '16' THEN 'Discount' END AS TYPE,IF(REFUND_CK_NO <> '', RTrim(A.REFUND_CK_NO),RTrim(A.REFERENCE)) As REFERENCE,AMT_INVOICE,CONVERT(0,SQL_FLOAT) AS CURRENT1,CONVERT(0,SQL_FLOAT) AS TPD2,CONVERT(0,SQL_FLOAT) AS TPD3,CONVERT(0,SQL_FLOAT) AS OVER,CONVERT(0,SQL_FLOAT) AS NOT_AGED,'' AS COLUMN1,'Adjust' AS ADJUST,'' AS PAY,LTRIM(RTRIM(UPPER(A.customer)))+LTRIM(RTRIM(UPPER(invoice))) As CUSTINV FROM V_AR_OPEN_ITEMS A LEFT JOIN V_CUSTOMER_MASTER B ON A.CUSTOMER = B.CUSTOMER LEFT JOIN V_SALESPERSONS C on A.SALESPERSON = C.ID WHERE A.DATE_TRANSACTION <= '{0}' ORDER BY A.CUSTOMER,A.DATE_INVOICE,A.DATE_TRANSACTION;",V.Local.dAgingDate.PervasiveDate,V.Local.sSQL)
+
+	F.Intrinsic.String.Build("SELECT LTRIM(RTRIM(UPPER(A.customer))) As CUSTOMER,B.NAME_CUSTOMER,A.SALESPERSON,GL_Account,Batch_Num,Batch_Line,A.TERRITORY As BRANCH,LTRIM(RTRIM(UPPER(invoice))) As INVOICE,A.DATE_INVOICE,A.DATE_TRANSACTION,A.DUE_DATE,BATCH_CODE,CASE BATCH_CODE WHEN '10' THEN 'Invoice' WHEN '11' THEN 'Cash' WHEN '12' THEN 'Credit' WHEN '13' THEN 'Adjust' WHEN '15' THEN 'FIN_CHG' WHEN '16' THEN 'DISCNT' END AS TYPE,IF(REFUND_CK_NO <> '', RTrim(A.REFUND_CK_NO),RTrim(A.REFERENCE)) As REFERENCE,AMT_INVOICE,CONVERT(0,SQL_FLOAT) AS CURRENT1,CONVERT(0,SQL_FLOAT) AS TPD2,CONVERT(0,SQL_FLOAT) AS TPD3,CONVERT(0,SQL_FLOAT) AS OVER,CONVERT(0,SQL_FLOAT) AS NOT_AGED,'' AS COLUMN1,'Adjust' AS ADJUST,'' AS PAY,LTRIM(RTRIM(UPPER(A.customer)))+LTRIM(RTRIM(UPPER(invoice))) As CUSTINV FROM V_AR_OPEN_ITEMS A LEFT JOIN V_CUSTOMER_MASTER B ON A.CUSTOMER = B.CUSTOMER  WHERE A.DATE_TRANSACTION <= '{0}' ORDER BY A.CUSTOMER,A.DATE_INVOICE,A.DATE_TRANSACTION;",V.Local.dAgingDate.PervasiveDate,V.Local.sSQL)
+
+	F.Data.DataTable.CreateFromSQL("dtAging0","con",V.Local.sSQL,True)
+	
+	f.Intrinsic.Control.If(v.DataTable.dtAging0.RowCount,=,0)
+		F.Data.DataTable.Close("dtAging0")
+		f.ODBC.Connection!Con.Close
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	
+	F.Data.DataTable.AddColumn("dtAging0","SALES_ORDER",String,"")
+	F.Data.DataTable.AddColumn("dtAging0","terms",String,"")
+	F.Data.DataTable.AddColumn("dtAging0","TELEPHONE",String,"")
+	F.Data.DataTable.AddColumn("dtAging0","Country",String," ")
+	F.Data.DataTable.AddColumn("dtAging0","attention",String,"")
+	F.Data.DataTable.AddColumn("dtAging0","REC_TYPE",String,"L")
+	F.Data.DataTable.AddColumn("dtAging0","ZERO",Float,0)
+	F.Data.DataTable.AddColumn("dtAging0","AGE_CASH",Boolean,False)
+	F.Data.DataTable.AddColumn("dtAging0","AGE_CASH2",Boolean,False)
+	F.Data.DataTable.AddColumn("dtAging0","AGE_CASH3",Boolean,False)
+	F.Data.DataTable.AddColumn("dtAging0","Trml",String,v.Caller.Terminal.Trim)
+	F.Data.DataTable.AddColumn("dtAging0","Rptid",String,"000568")
+	
+'TRMNL	 - Trml
+'RPTID - Rptid
+'CUST_NO	- CUSTOMER
+'SEQUENCE
+'REC_TYPE		- L, C, GT				
+'CRRNCY		- USD
+'CUST_NAME  - NAME_CUSTOMER
+'FROM_CRRNCY
+'TO_CURRENC
+'AGE_DATE - TODAY'S DATE, YYYYMMDD			
+'INVOICE   - INVOICE
+'CODE - BATCH_CODE
+'BATCH_NUM - Batch_Num
+'BTCH_LINE -  Batch_Line
+'COUNTRY
+'TELEPHONE - TELEPHONE
+'FAX
+'ATTN - attention
+'TERMS - terms
+'INV_DATE - DATE_INVOICE YYYYMMDD
+'DUE_DATE - DUE_DATE YYYYMMDD
+'DISC_DATE - DATE_INVOICE
+'TRANSTYP  - TYPE
+'REF - REFERENCE
+'BRANCH - BRANCH
+'LIMIT - ???
+'RATE - ???
+'FILL1
+'AMT   - AMT_INVOICE
+'FILL2
+'CURR - current1
+'FILL3
+'D_30 - TDP2
+'FILL4
+'D_60 - TDP3
+'FILL5
+'D_90 - over
+'FILL6
+'DATING - NotAged
+'FILL7
+'TOTAL - 0
+'VEND
+'SLSMN - SALESPERSON
+'FILL8 - 0
+'BAL - 0
+'GL_ACCT - GL_Account
+'FILLER45 - 0
+
+'TRMNL	
+'RPTID
+'CUST_NO	
+'SEQUENCE
+'REC_TYPE						
+'CRRNCY		
+'CUST_NAME
+'FROM_CRRNCY
+'TO_CURRENC
+'AGE_DATE
+'INVOICE
+'CODE
+'BATCH_NUM
+'BTCH_LINE
+'COUNTRY
+'TELEPHONE - TELEPHONE
+'FAX
+'ATTN
+'TERMS
+'INV_DATE
+'DUE_DATE
+'DISC_DATE
+'TRANSTYP
+'REF
+'BRANCH
+'LIMIT
+'RATE
+'FILL1
+'FILL2
+'FILL3
+'FILL4
+'FILL5
+'FILL6
+'FILL7
+'FILL8
+'FILLER45
+
+'NotAged - dating
+'D_90  - over
+'D_60   TDP3
+'D_30   TDP2
+'Curr - current1
+'Amt  - amt_Invoice
+
+
+	'Set Zeros
+	F.Intrinsic.String.Build("SELECT LTRIM(RTRIM(UPPER(customer)))+LTRIM(RTRIM(UPPER(invoice))) As CUSTINV,SUM(AMT_INVOICE) FROM V_AR_OPEN_ITEMS WHERE DATE_TRANSACTION <= '{0}' GROUP BY CUSTOMER,INVOICE;",V.Local.dAgingDate.PervasiveDate,V.Local.sSQL)
+	F.Data.Dictionary.CreateFromSQL("dZero","con",V.Local.sSQL)
+	F.Data.Dictionary.SetDefaultReturn("dZero",0)
+	F.Data.DataTable.FillFromDictionary("dtAging0","dZero","CUSTINV","ZERO")
+
+	'Set Age flag for Cash Items
+	F.Intrinsic.String.Build("Select LTRIM(RTRIM(UPPER(customer)))+LTRIM(RTRIM(UPPER(invoice))) As CUSTINV,Cast(If(Count(Invoice) > 0,1,0) as Bit) As AGE_CASH From V_AR_Open_Items Where Batch_Code In ('10') And Date_Transaction <= '{0}' Group By Customer,Invoice Order By Invoice;",V.Local.dAgingDate.PervasiveDate,V.Local.sSQL)
+	F.Data.Dictionary.CreateFromSQL("dAge","con",V.Local.sSQL)
+	F.Data.Dictionary.SetDefaultReturn("dAge",False)
+	F.Data.DataTable.FillFromDictionary("dtAging0","dAge","CUSTINV","AGE_CASH")
+	
+	F.Intrinsic.String.Build("Select LTRIM(RTRIM(UPPER(customer)))+LTRIM(RTRIM(UPPER(invoice))) As CUSTINV,Cast(If(Count(Invoice) > 1,1,0) as Bit) As AGE_CASH From V_AR_Open_Items Where Batch_Code In ('10','12') And Date_Transaction <= '{0}' Group By Customer,Invoice Order By Invoice;",V.Local.dAgingDate.PervasiveDate,V.Local.sSQL)
+	F.Data.Dictionary.CreateFromSQL("dAge2","con",V.Local.sSQL)
+	F.Data.Dictionary.SetDefaultReturn("dAge2",False)
+	F.Data.DataTable.FillFromDictionary("dtAging0","dAge2","CUSTINV","AGE_CASH2")
+	
+	F.Intrinsic.String.Build("Select LTRIM(RTRIM(UPPER(customer)))+LTRIM(RTRIM(UPPER(invoice))) As CUSTINV,Cast(If(Count(Invoice) > 1,1,0) as Bit) As AGE_CASH From V_AR_Open_Items Where Batch_Code In ('12') And Date_Transaction <= '{0}' Group By Customer,Invoice Order By Invoice;",V.Local.dAgingDate.PervasiveDate,V.Local.sSQL)
+	F.Data.Dictionary.CreateFromSQL("dAge3","con",V.Local.sSQL)
+	F.Data.Dictionary.SetDefaultReturn("dAge3",False)
+	F.Data.DataTable.FillFromDictionary("dtAging0","dAge3","CUSTINV","AGE_CASH3")
+
+'attention,Country, terms
+	'Set Sales Order
+'	F.Data.Dictionary.CreateFromSQL("dSO","con","Select LTRIM(RTRIM(UPPER(customer)))+LTRIM(RTRIM(UPPER(invoice))) As CUSTINV,Order_No+'-'+Left(Order_Line,3) As SO From Order_Hist_Line;")
+'	F.Data.Dictionary.SetDefaultReturn("dSO","")
+'	F.Data.DataTable.FillFromDictionary("dtAging0","dSO","CUSTINV","SALES_ORDER")
+'	F.Data.Dictionary.Close("dSO")
+	
+'	'Set Email
+'	F.Data.Dictionary.CreateFromSQL("dEmail","con","Select LTRIM(RTRIM(UPPER(customer))) As Customer,RTrim(Email) As Email from V_Customer_Sales Where Email <> '';")
+'	F.Data.Dictionary.SetDefaultReturn("dEmail","")
+'	F.Data.DataTable.FillFromDictionary("dtAging0","dEmail","CUSTOMER","EMAIL")
+'	
+'	'Set Telephone
+'	F.Data.Dictionary.CreateFromSQL("dTele","con","Select LTRIM(RTRIM(UPPER(customer))) As Customer,Case When Length(LTrim(Telephone)) = 13 Then Left(LTrim(Telephone),3)+'-'+Substring(LTrim(Telephone),4,3)+'-'+Substring(LTrim(Telephone),8,3)+'-'+Right(LTrim(Telephone),4) When Length(LTrim(Telephone)) = 10 Then Left(LTrim(Telephone),3)+'-'+Substring(LTrim(Telephone),4,3)+'-'+Right(LTrim(Telephone),4) Else Telephone End As Telephone From V_Customer_Master Where Telephone <> '' Order by Customer;")
+'	F.Data.Dictionary.SetDefaultReturn("dTele","")
+'	F.Data.DataTable.FillFromDictionary("dtAging0","dTele","CUSTOMER","TELEPHONE")
+
+	'Set Due Date
+	F.Data.Dictionary.CreateFromSQL("dDueDate", "con", "Select LTRIM(RTRIM(UPPER(customer)))+LTRIM(RTRIM(UPPER(invoice))) As CUSTINV, IF(DUE_DATE = '1900-01-01',NULL,DUE_DATE) AS DUE_DATE FROM V_AR_OPEN_ITEMS ORDER BY DATE_TRANSACTION;")
+	F.Data.Dictionary.SetDefaultReturn("dDueDate", "1900-01-01")
+	F.Data.DataTable.FillFromDictionary("dtAging0", "dDueDate", "CUSTINV", "DUE_DATE")
+
+	
+	F.Data.Dictionary.CreateFromSQL("dSO","con","Select LTRIM(RTRIM(UPPER(customer)))+LTRIM(RTRIM(UPPER(invoice))) As CUSTINV,rtrim(attention) As ATTN From Order_Hist_Head;")
+	F.Data.Dictionary.SetDefaultReturn("dSO","")
+	F.Data.DataTable.FillFromDictionary("dtAging0","dSO","CUSTINV","attention")
+	F.Data.Dictionary.Close("dSO")
+'	
+'	F.Data.Dictionary.CreateFromSQL("dSO","con","Select LTRIM(RTRIM(UPPER(customer)))+LTRIM(RTRIM(UPPER(invoice))) As CUSTINV,Email As SO From Order_Hist_Head;")
+'	F.Data.Dictionary.SetDefaultReturn("dSO","")
+'	F.Data.DataTable.FillFromDictionary("dtAging0","dSO","CUSTINV","SALES_ORDER")
+	
+	F.Data.Dictionary.CreateFromSQL("dSO","con","Select LTRIM(RTRIM(UPPER(customer)))+LTRIM(RTRIM(UPPER(invoice))) As CUSTINV,Country From Order_Hist_Head;")
+	F.Data.Dictionary.SetDefaultReturn("dSO","")
+	F.Data.DataTable.FillFromDictionary("dtAging0","dSO","CUSTINV","Country")
+	F.Data.Dictionary.Close("dSO")
+	
+	F.Data.Dictionary.CreateFromSQL("dSO","con","Select LTRIM(RTRIM(UPPER(customer)))+LTRIM(RTRIM(UPPER(invoice))) As CUSTINV,terms From Order_Hist_Head;")
+	F.Data.Dictionary.SetDefaultReturn("dSO","")
+	F.Data.DataTable.FillFromDictionary("dtAging0","dSO","CUSTINV","terms")
+	F.Data.Dictionary.Close("dSO")
+	
+	F.Data.Dictionary.CreateFromSQL("dSO","con","Select LTRIM(RTRIM(UPPER(customer)))+LTRIM(RTRIM(UPPER(invoice))) As CUSTINV,rtrim(left(CONTACT_PHONE,17)) As TELEPHONE From Order_Hist_Head;")
+	F.Data.Dictionary.SetDefaultReturn("dSO","")
+	F.Data.DataTable.FillFromDictionary("dtAging0","dSO","CUSTINV","TELEPHONE")
+	F.Data.Dictionary.Close("dSO")
+'	
+'	F.Data.Dictionary.CreateFromSQL("dSO","con","Select LTRIM(RTRIM(UPPER(customer)))+LTRIM(RTRIM(UPPER(invoice))) As CUSTINV,CONTACT_EMAIL As SO From Order_Hist_Head;")
+'	F.Data.Dictionary.SetDefaultReturn("dSO","")
+'	F.Data.DataTable.FillFromDictionary("dtAging0","dSO","CUSTINV","SALES_ORDER")
+	
+
+'	
+'	
+'	'Add OVER2 column
+'	F.Intrinsic.Control.If(V.Screen.FrmAging!optAgeDueDate.Value)
+'		F.Data.DataTable.AddColumn("dtAging0","OVER2",Float,0)
+'	F.Intrinsic.Control.EndIf
+
+
+	F.Data.DataView.Create("dtAging0","dvAging0",22,V.Local.sFilter,"")
+	F.Data.DataView.ToDataTable("dtAging0","dvAging0","dtAging",True)
+
+	
+	
+
+'	F.Data.DataTable.Close("dtAging")
+	F.Data.Dictionary.Close("dZero")
+	F.Data.Dictionary.Close("dAge")
+	F.Data.Dictionary.Close("dAge2")
+	F.Data.Dictionary.Close("dAge3")
+	F.Data.Dictionary.Close("dDueDate")
+	
+
+	
+	F.Intrinsic.Control.CallSub(LoadAging)
+'	
+'	CURRENT1 - current
+'	TPD2 - 1-30
+'	TPD3 - 31-60
+'	OVER - 61-90
+'	OVER2 - over 90
+'	NOT_AGED - not aged
+
+'	Function.Intrinsic.Debug.Stop
+
+	f.Data.DataTable.Create("DTLINK",false)
+	f.Data.DataTable.AddColumn("DTLINK","SEQCODE","string")
+
+'	F.Data.Linq.Join("leftjoin","datatable","dtAging0*!*D","datatable","DTLINK*!*L","D.CUSTOMER=L.SEQCODE","D.CUSTOMER*!*sum(D.AMT_INVOICE) as AMT_INVOICETOT*!*sum(D.TPD2) as TPD2TOT*!*sum(D.TPD3) as TPD3TOT*!*sum(D.over) as overTOT*!*sum(D.Not_Aged) as NotAgedTOT","","D.CUSTOMER","","ImportQty",false)
+
+
+	F.Data.Linq.Join("leftjoin","datatable","dtAging*!*D","datatable","DTLINK*!*L","D.CUSTOMER=L.SEQCODE","D.CUSTOMER*!*sum(D.AMT_INVOICE) as AMT_INVOICETOT*!*sum(D.current1) as current1TOT*!*sum(D.TPD2) as TDP2TOT*!*sum(D.TPD3) as TPD3TOT*!*sum(D.over) as overTOT*!*sum(D.Not_Aged) as NotAgedTOT","","D.CUSTOMER","","ImportQty",false)
+	
+	f.Data.DataView.Create("dtAging","Aging0",22,"","CUSTOMER,DATE_INVOICE")
+	f.Data.DataView.Create("ImportQty","DVImport1",22,"","")
+	Function.Data.DataView.ToDataTableDistinct("dtAging","Aging0","DTCust","CUSTOMER")
+
+	V.Local.ssql.Set(V.DataTable.dtAging.FieldNames)
+	
+	F.Data.DataTable.AddColumn("dtAging","DATE_INVOICE_S","String","")
+	F.Data.DataTable.AddColumn("dtAging","DUE_DATE_S","String","")
+	F.Data.DataTable.AddColumn("dtAging","DATE_TRANSACTION_S","String","")
+	f.Data.Datatable.AddColumn("dtAging","SEQUENCE","string")
+	f.Data.Datatable.AddColumn("dtAging","CRRNCY","string","USD")
+	f.Data.Datatable.AddColumn("dtAging","AGE_DATE","string",v.Ambient.date)
+	f.Data.Datatable.AddColumn("dtAging","AGE_DATE_S","string",v.Ambient.date)
+	
+	f.Intrinsic.Control.If(v.DataTable.dtAgingFinal.Exists,=,False)
+		f.Data.DataTable.Clone("dtAging","dtAgingFinal",True)
+	f.Intrinsic.Control.endif
+	
+'	TOTAL
+	
+	f.Intrinsic.Control.For(v.Local.iCount,0,v.DataTable.DTCust.RowCount--,1)
+		v.Local.sCustomer.Set(v.DataTable.DTCust(v.Local.iCount).CUSTOMER!fieldVal)
+		f.Intrinsic.String.Build("CUSTOMER='{0}'",v.Local.sCustomer,v.Local.sFilter)
+		f.Data.DataView.SetFilter("ImportQty","DVImport1",v.Local.sFilter)
+		
+		f.Data.DataView.SetFilter("dtAging","Aging0",v.Local.sFilter)
+'		f.Data.DataView.SetSort("Import1","DVImport1","CUSTOMER")
+		
+'		command to copy entire row like copycolumn
+
+		
+		
+		v.Local.scust.Set(V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).CUSTOMER!FieldvalTrim)
+		v.Local.sNAME_CUSTOMER.Set(V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).NAME_CUSTOMER!FieldvalTrim)
+		v.Local.sSALESPERSON.Set(V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).SALESPERSON!FieldvalTrim)
+		v.Local.sGL_Account.Set(V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).GL_Account!FieldvalTrim)
+		v.Local.sBatch_Num.Set(V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).Batch_Num!FieldvalTrim)
+		v.Local.sBatch_Line.Set(V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).Batch_Line!FieldvalTrim)
+		v.Local.sBRANCH.Set(V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).BRANCH!FieldvalTrim)
+		v.Local.sINVOICE.Set(V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).INVOICE!FieldvalTrim)
+		v.Local.sDATE_INVOICE.Set(V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).DATE_INVOICE!Fieldval)
+		v.Local.sDATE_TRANSACTION.Set(V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).DATE_TRANSACTION!Fieldval)
+		v.Local.sDUE_DATE.Set(V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).DUE_DATE!Fieldval)
+		v.Local.sBATCH_CODE.Set(V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).BATCH_CODE!FieldvalTrim)
+		v.Local.sTYPE.Set(V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).TYPE!FieldvalTrim)
+		v.Local.sREFERENCE.Set(V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).REFERENCE!FieldvalTrim)
+'		v.Local.sAMT_INVOICE.Set(V.DataView.dtAging0!Aging0(v.DataView.dtAging0!Aging0.RowCount--).AMT_INVOICE!FieldvalTrim)
+'		v.Local.sCURRENT1.Set(V.DataView.dtAging0!Aging0(v.DataView.dtAging0!Aging0.RowCount--).CURRENT1!FieldvalTrim)
+'		v.Local.sTPD2.Set(V.DataView.dtAging0!Aging0(v.DataView.dtAging0!Aging0.RowCount--).TPD2!FieldvalTrim)
+'		v.Local.sTPD3.Set(V.DataView.dtAging0!Aging0(v.DataView.dtAging0!Aging0.RowCount--).TPD3!FieldvalTrim)
+'		v.Local.sOVER.Set(V.DataView.dtAging0!Aging0(v.DataView.dtAging0!Aging0.RowCount--).OVER!FieldvalTrim)
+'		v.Local.sNOT_AGED.Set(V.DataView.dtAging0!Aging0(v.DataView.dtAging0!Aging0.RowCount--).NOT_AGED!FieldvalTrim)
+		v.Local.sterms.Set(V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).terms!FieldvalTrim)
+		v.Local.sTELEPHONE.Set(V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).TELEPHONE!FieldvalTrim)
+		v.Local.sCountry.Set(V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).Country!FieldvalTrim)
+		v.Local.sattention.Set(V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).attention!FieldvalTrim)
+'		v.Local.sREC_TYPE.Set(V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).REC_TYPE!FieldvalTrim)
+		v.Local.sTrml.Set(V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).Trml!FieldvalTrim)
+		v.Local.sRptid.Set(V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).Rptid!FieldvalTrim)
+		
+		
+
+
+'		V.DataView.ImportQty!DVImport1(0).AMT_INVOICETOT!Fieldval
+'		V.DataView.ImportQty!DVImport1(0).current1TOT!Fieldval
+'		V.DataView.ImportQty!DVImport1(0).TDP2TOT!Fieldval
+'		V.DataView.ImportQty!DVImport1(0).TPD3TOT!Fieldval
+'		V.DataView.ImportQty!DVImport1(0).overTOT!Fieldval
+'		V.DataView.ImportQty!DVImport1(0).NotAgedTOT!Fieldval
+		
+		Function.Data.DataTable.AddRowByMap("dtAging","CUSTOMER*!*NAME_CUSTOMER*!*SALESPERSON*!*GL_Account*!*Batch_Num*!*Batch_Line*!*BRANCH*!*INVOICE*!*DATE_INVOICE*!*DATE_TRANSACTION*!*DUE_DATE*!*BATCH_CODE*!*TYPE*!*REFERENCE*!*AMT_INVOICE*!*CURRENT1*!*TPD2*!*TPD3*!*OVER*!*NOT_AGED*!*terms*!*TELEPHONE*!*Country*!*attention*!*REC_TYPE*!*Trml*!*Rptid",v.Local.scust,v.Local.sNAME_CUSTOMER,v.Local.sSALESPERSON,v.Local.sGL_Account,v.Local.sBatch_Num,v.Local.sBatch_Line,v.Local.sBRANCH,v.Local.sINVOICE,V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).DATE_INVOICE!Fieldval,V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).DATE_TRANSACTION!Fieldval,V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).DUE_DATE!Fieldval,v.Local.sBATCH_CODE,v.Local.sTYPE,v.Local.sREFERENCE,V.DataView.ImportQty!DVImport1(0).AMT_INVOICETOT!Fieldval,V.DataView.ImportQty!DVImport1(0).current1TOT!Fieldval,V.DataView.ImportQty!DVImport1(0).TDP2TOT!Fieldval,V.DataView.ImportQty!DVImport1(0).TPD3TOT!Fieldval,V.DataView.ImportQty!DVImport1(0).overTOT!Fieldval,V.DataView.ImportQty!DVImport1(0).NotAgedTOT!Fieldval,v.Local.sterms,v.Local.sTELEPHONE.left17,v.Local.sCountry,v.Local.sattention,"C",v.Local.sTrml,v.Local.sRptid)
+		
+
+	f.Intrinsic.Control.Next(v.Local.iCount)
+		
+
+'	Function.Intrinsic.Debug.InvokeDebugger
+
+
+	
+'	F.Data.DataTable.Compute("dtAging","SUM(AMT_INVOICE)","",V.Local.fAMT_INVOICE)
+'	F.Data.DataTable.Compute("dtAging","SUM(current1)","",V.Local.fcurrent1)
+'	F.Data.DataTable.Compute("dtAging","SUM(TPD2)","",V.Local.fTPD2)
+'	F.Data.DataTable.Compute("dtAging","SUM(TPD3)","",V.Local.fTPD3)
+'	F.Data.DataTable.Compute("dtAging","SUM(over)","",V.Local.fover)
+'	F.Data.DataTable.Compute("dtAging","SUM(Not_Aged)","",V.Local.fNotAged)
+'	
+'	Function.Data.DataTable.AddRowByMap("dtAging","CUSTOMER*!*NAME_CUSTOMER*!*SALESPERSON*!*GL_Account*!*Batch_Num*!*Batch_Line*!*BRANCH*!*INVOICE*!*DATE_INVOICE*!*DATE_TRANSACTION*!*DUE_DATE*!*BATCH_CODE*!*TYPE*!*REFERENCE*!*AMT_INVOICE*!*CURRENT1*!*TPD2*!*TPD3*!*OVER*!*NOT_AGED*!*terms*!*TELEPHONE*!*Country*!*attention*!*REC_TYPE*!*Trml*!*Rptid",v.Local.scust,v.Local.sNAME_CUSTOMER,v.Local.sSALESPERSON,v.Local.sGL_Account,v.Local.sBatch_Num,v.Local.sBatch_Line,v.Local.sBRANCH,v.Local.sINVOICE,V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).DATE_INVOICE!Fieldval,V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).DATE_TRANSACTION!Fieldval,V.DataView.dtAging!Aging0(v.DataView.dtAging!Aging0.RowCount--).DUE_DATE!Fieldval,v.Local.sBATCH_CODE,v.Local.sTYPE,v.Local.sREFERENCE,V.Local.fAMT_INVOICE,V.Local.fcurrent1,V.Local.fTPD2,V.Local.fTPD3,V.Local.fover,V.Local.fNotAged,v.Local.sterms,v.Local.sTELEPHONE.left17,v.Local.sCountry,v.Local.sattention,"GT",v.Local.sTrml,v.Local.sRptid)
+'	
+'	f.Data.DataTable.SetValueFormat("dtAging",-1,"DATE_INVOICE","DATE_INVOICE_S","YYYYMMDD")
+'	f.Data.DataTable.SetValueFormat("dtAging",-1,"DUE_DATE","DUE_DATE_S","YYYYMMDD")
+'	f.Data.DataTable.SetValueFormat("dtAging",-1,"DATE_TRANSACTION","DATE_TRANSACTION_S","YYYYMMDD")
+'	f.Data.DataTable.SetValueFormat("dtAging",-1,"AGE_DATE","AGE_DATE_S","YYYYMMDD")
+	
+	
+	f.Data.DataTable.Merge("dtAging","dtAgingFinal",True,3)
+	
+'	'============
+'	F.Data.DataTable.SetSeries("dtAging","SEQUENCE",1,1)
+'	f.Data.DataTable.SetValueFormat("dtAging",-1,"SEQUENCE","SEQUENCE","000000000")
+'	
+'	f.Intrinsic.String.Build("Delete from BI_AR_AGING where RPTID = '000568' and TRMNL ='{0}' ",v.Caller.Terminal.Trim,v.Local.ssql)
+'	f.ODBC.Connection!Con.Execute(v.Local.ssql)
+'	Function.Intrinsic.Debug.Stop
+'	'
+'	
+'	F.Data.DataTable.SaveToDB("dtAging","con","BI_AR_AGING_6965","Trml*!*Rptid*!*SEQUENCE*!*CUSTOMER",256,"SEQUENCE@!@SEQUENCE*!*CUSTOMER@!@CUST_NO*!*NAME_CUSTOMER@!@CUST_NAME*!*Trml@!@TRMNL*!*Rptid@!@RPTID*!*SALESPERSON@!@SLSMN*!*GL_Account@!@GL_ACCT*!*Batch_Num@!@BATCH_NUM*!*Batch_Line@!@BTCH_LINE*!*BRANCH@!@BRANCH*!*INVOICE@!@INVOICE*!*DATE_INVOICE_S@!@INV_DATE*!*DUE_DATE_S@!@DUE_DATE*!*BATCH_CODE@!@CODE*!*TYPE@!@TRANSTYP*!*REFERENCE@!@REF*!*AMT_INVOICE@!@AMT*!*CURRENT1@!@CURR*!*TPD2@!@D_30*!*TPD3@!@D_60*!*OVER@!@D_90*!*NOT_AGED@!@DATING*!*terms@!@TERMS*!*TELEPHONE@!@TELEPHONE*!*attention@!@ATTN*!*REC_TYPE@!@REC_TYPE*!*CRRNCY@!@CRRNCY*!*AGE_DATE_S@!@AGE_DATE")
+'	'===========
+	
+	f.Data.DataTable.Close("DTLINK")
+	f.Data.DataTable.Close("ImportQty")
+	F.Data.DataTable.Close("dtAging")
+	F.Data.DataTable.Close("dtAging0")
+	
+	f.ODBC.Connection!Con.Close
+	
+	f.Intrinsic.Control.Catch
+	Function.Intrinsic.Debug.InvokeDebugger
+	Function.Intrinsic.Debug.Stop
+	
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+
+
+Program.Sub.PopulateData.End
+
+Program.Sub.Add_Data.Start
+f.Intrinsic.Control.Try
+
+v.local.sCOCode.Declare
+v.Local.iCount.Declare
+v.local.sSql.Declare
+
+'f.Intrinsic.Control.If(v.Caller.Switches,=,"S")
+'	f.Intrinsic.Control.If(v.Caller.CompanyCode,=,"A15")
+	gui.frmSalesRecap.lbl5.Visible(true)
+'	f.Intrinsic.Control.BlockEvents(true)
+	
+	F.Intrinsic.UI.InvokeWaitDialog("Loading...","Please Wait...")
+
+	
+	f.ODBC.Connection!con.OpenCompanyConnection
+	
+	f.ODBC.Connection!Con.Execute("delete from GCG_6965_customer_master")
+	f.ODBC.Connection!Con.Execute("delete from GCG_6965_customer_sales")
+	f.ODBC.Connection!Con.Execute("delete from GCG_6965_Order_Hist")
+	
+	f.ODBC.Connection!Con.Close
+	
+	F.ODBC.Connection!CONCOM.OpenCommonConnection(7200)
+'Function.Intrinsic.Debug.InvokeDebugger
+'Function.Intrinsic.Debug.Stop
+
+	F.Data.DataTable.CreateFromSQL("dCO","CONCOM","select cocode from COMPANIES where cocode in('A15','A20','A25','A05')")
+
+		f.Intrinsic.Control.For(v.Local.iCount,0,v.DataTable.dCO.RowCount--,1)
+			f.Intrinsic.String.Build("GLOBAL_{0}",v.DataTable.dCO(v.Local.iCount).cocode!fieldVal,v.local.sCOCode)
+'			f.Intrinsic.UI.Msgbox(v.local.sCOCode)
+'			f.Intrinsic.Control.if(v.local.sCOCode.trim,=,"GLOBAL_A15")
+'			f.Intrinsic.Control.if(v.local.sCOCode.trim,<>,"GLOBAL_TST","or",v.local.sCOCode.trim,<>,"GLOBAL_PLA")
+				f.ODBC.Connection!Con.OpenConnection(v.local.sCOCode,v.Ambient.PUser,v.Ambient.PPass)
+	'			f.Intrinsic.Control.if(v.local.sCOCode.trim,<>,"GLOBAL_TST")
+	'				f.Global.General.overridecompany(v.DataTable.dCO(v.Local.iCount).cocode!fieldVal)
+'					F.ODBC.Connection!Con.OpenCompanyConnection(300)
+'					f.Intrinsic.Control.CallSub(Add_Data)
+	'			f.Intrinsic.Control.endif
+	'		f.Intrinsic.Control.endif 
+	
+'				f.ODBC.Connection!Con.Execute("Insert into GLOBALA15.GCG_6965_customer_master select CUSTOMER,NAME_CUSTOMER,, as ccode  from V_CUSTOMER_MASTER")
+'				f.ODBC.Connection!Con.Execute("Insert into GLOBALA15.GCG_6965_customer_sales select customer,C_Sort_1 from v_CUSTOMER_SALES ")
+'				f.ODBC.Connection!Con.Execute("Insert into GLOBALA15.GCG_6965_Order_Hist select INVOICE,CUSTOMER,DATE_INVOICE,GL_ACCOUNT,FLAG_TAX_STATUS,EXTENSION,TAX_DESC_1,TAX_AMT_1,TAX_DESC_2,TAX_AMT_2 from V_ORDER_HIST_LINE")
+'				
+				F.Data.DataTable.CreateFromSQL("dtrec","Con","select count(INVOICE) as CNT from V_ORDER_HIST_LINE")
+				f.Intrinsic.Control.If(v.DataTable.dtrec(0).CNT!fieldVal,>,0)
+					f.Intrinsic.String.Build("Insert into GLOBALA15.GCG_6965_customer_master select CUSTOMER,NAME_CUSTOMER,'{0}' as ccode  from V_CUSTOMER_MASTER",v.DataTable.dCO(v.Local.iCount).cocode!fieldVal,v.local.ssql)
+					f.ODBC.Connection!Con.Execute(v.Local.ssql)
+					f.Intrinsic.String.Build("Insert into GLOBALA15.GCG_6965_customer_sales select customer,C_Sort_1,'{0}' as ccode,rec from v_CUSTOMER_SALES ",v.DataTable.dCO(v.Local.iCount).cocode!fieldVal,v.local.ssql)
+					f.ODBC.Connection!Con.Execute(v.Local.ssql)
+					f.Intrinsic.String.Build("Insert into GLOBALA15.GCG_6965_Order_Hist select INVOICE,CUSTOMER,DATE_INVOICE,GL_ACCOUNT,FLAG_TAX_STATUS,EXTENSION,TAX_DESC_1,TAX_AMT_1,TAX_DESC_2,TAX_AMT_2,'{0}' as ccode,ORDER_LINE from V_ORDER_HIST_LINE",v.DataTable.dCO(v.Local.iCount).cocode!fieldVal,v.local.ssql)
+					f.ODBC.Connection!Con.Execute(v.Local.ssql)
+				f.Intrinsic.Control.EndIf
+				F.Data.DataTable.Close("dtrec")
+				f.ODBC.Connection!Con.Close
+'			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.Next(v.Local.iCount)
+		
+		f.Data.DataTable.Close("dCO")
+		f.ODBC.Connection!CONCOM.Close
+'		f.Intrinsic.Control.BlockEvents(false)
+		gui.frmSalesRecap.lbl5.Visible(false)
+		F.Intrinsic.UI.CloseWaitDialog
+	f.Intrinsic.UI.Msgbox("Completed")
+'	f.Intrinsic.Control.EndIf
+'f.Intrinsic.Control.EndIf
+
+		f.Intrinsic.Control.CallSub(Print_REP)
+	
+	
+	f.Intrinsic.Control.Catch
+'	f.Intrinsic.Control.BlockEvents(false)
+	gui.frmSalesRecap.lbl5.Visible(false)
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Add_Data.End
+
+Program.Sub.Print_REP.Start
+F.Intrinsic.Control.Try
+
+V.local.iBiRunID.Declare(long)
+V.local.iBILogID.Declare(long)
+V.Local.sRet.Declare(String)
+V.Local.sParams.Declare(String)
+V.Local.sValues.Declare(String)
+V.Local.iRet.Declare(long)
+V.Local.sRptName.Declare(String)
+V.Local.iRptid.Declare(long)
+
+v.Local.bValues.Declare
+
+
+'F.Intrinsic.Control.If(V.Ambient.IsInIDE,=,True)
+'	F.Global.BI.StartLogging(V.local.iBiRunID,100025,0,"",V.local.iBILogID)
+'F.Intrinsic.Control.Else
+'       F.Global.BI.StartLogging(V.local.iBiRunID,-1,-1,"",V.local.iBILogID)
+'F.Intrinsic.Control.EndIf
+
+
+gui.frmSalesRecap.lbl5.Visible(true)
+'f.Intrinsic.Control.BlockEvents(true)
+Function.Intrinsic.UI.ChangeWaitStatus("Printing in progress please wait ...")
+
+F.Global.BI.GetRunID(V.local.iBIRunID)
+F.Global.BI.GetIDFromName("GCG_6965_SalesRecap.rpt",V.Local.iRptid)
+F.Global.BI.StartLogging(V.Local.iBIRunID,V.Local.iRptid,0,"",V.Local.iBILogID)
+
+F.Global.BI.StopLogging(V.local.iBILogID)
+
+
+'V.Local.sParams.Set("Summary or Detail")
+'V.Local.sParams.Set("Summary or Detail*!*Sales Type*!*Dates")
+V.Local.sParams.Set("Summary or Detail*!*Sales Type")
+
+f.Intrinsic.Control.If(v.Screen.frmSalesRecap!ddlRptType.ListIndex,=,0)
+	v.Local.bValues.Set(1)
+f.Intrinsic.Control.else
+	v.Local.bValues.Set(0)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.frmSalesRecap!ddlSalType.ListIndex,=,0)
+	v.Local.sValues.Set("P")
+f.Intrinsic.Control.elseIf(v.Screen.frmSalesRecap!ddlSalType.ListIndex,=,1)
+	v.Local.sValues.Set("I")
+f.Intrinsic.Control.elseIf(v.Screen.frmSalesRecap!ddlSalType.ListIndex,=,2)
+	v.Local.sValues.Set("O")
+f.Intrinsic.Control.EndIf
+
+'F.Intrinsic.String.Build("{0}",v.Caller.Terminal,V.Local.sValues)
+
+F.Intrinsic.String.Build("{0}*!*{1}",v.Local.bValues,v.Local.sValues,V.Local.sValues)
+'f.Intrinsic.Control.BlockEvents(false)
+gui.frmSalesRecap.lbl5.Visible(false)
+Function.Intrinsic.UI.CloseWaitDialog
+gui.frmSalesRecap..AlwaysOnTop(false)
+F.Global.BI.RunReportPreProcessor(V.local.iBiRunID,V.local.iBILogID,V.Local.sParams,V.Local.sValues,"",-1,True,"",-1,"",-1,"","",V.Local.iRet)
+
+
+F.Intrinsic.Control.Catch
+'f.Intrinsic.Control.BlockEvents(false)
+Function.Intrinsic.UI.CloseWaitDialog
+gui.frmSalesRecap.lbl5.Visible(false)
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.Print_REP.End
+
+Program.Sub.frmSalesRecap_UnLoad.Start
+	F.Intrinsic.Control.End
+Program.Sub.frmSalesRecap_UnLoad.End
+
+Program.Sub.cmdRefresh_Click.Start
+	f.Intrinsic.Control.CallSub(Add_Data)
+Program.Sub.cmdRefresh_Click.End
+
+Program.Sub.cmdPrint_Click.Start
+	f.Intrinsic.Control.CallSub(Print_REP)
+Program.Sub.cmdPrint_Click.End
+
+Program.Sub.Comments.Start
+${$5$}$3.0.0.0$}$1
+${$6$}$rnair$}$20231108151741309$}$JUGEdtlNdgRUPvge2DQ26cQN3mFRxmKJqz5ijvq8SKsKXbDiR+Fio35UMhOXsAnPXqLC5omNZsg=
+Program.Sub.Comments.End
